@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./bundle/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": false,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@cmp/*": [
+        "./publicsrc/components/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ],
+    }
+  }
+}
