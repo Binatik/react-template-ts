@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
-import { Outlet } from "react-router-dom";
-import styled from "styled-components";
+import { Outlet } from 'react-router-dom';
+import styled from 'styled-components';
+
+import { useAppSelector } from '@src/hooks/useAppSelector';
 
 const Layout: FC = () => {
+  const { toggle } = useAppSelector(state => state.burger);
   return (
     <>
       <Wrapper>

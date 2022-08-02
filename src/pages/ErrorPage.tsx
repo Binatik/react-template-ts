@@ -1,23 +1,25 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from 'react';
 
-import { Container } from "@src/store/styled/components/other";
+import { Container } from '@src/store/styled/components/other';
 
 interface IErrorPage {
   code: number;
 }
 
 const ErrorPage: FC<IErrorPage> = ({ code }) => {
-  const [information, setInformation] = useState("");
+  const [information, setInformation] = useState('');
 
   useEffect(() => {
     if (code === 404) {
-      setInformation("Страницы нет");
+      setInformation('Страницы нет');
     }
   }, [information]);
 
   return (
     <>
-      <Container><h2>{information}</h2></Container>
+      <Container>
+        <h2>{information}</h2>
+      </Container>
     </>
   );
 };

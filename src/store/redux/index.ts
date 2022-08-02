@@ -1,12 +1,17 @@
-import { configureStore } from "@reduxjs/toolkit";
-import burger from "./slice/burger";
+import { configureStore } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
 
-export const getBurgerState = (state: any) => state.burger;
+import burger from './slice/burger';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     burger,
   },
 
-  devTools: process.env.NODE_ENV !== "production",
+  devTools: process.env.NODE_ENV !== 'production',
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+export { store };

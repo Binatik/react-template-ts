@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit'; //Для типизации action
 
 interface IBurger {
-  toggle: boolean
+  toggle: boolean;
 }
 
 const initialState: IBurger = {
@@ -10,10 +10,10 @@ const initialState: IBurger = {
 };
 
 const burger = createSlice({
-  name: "burger",
+  name: 'burger',
   initialState,
   reducers: {
-    toggle(state, action: PayloadAction) {
+    toggle(state) {
       state.toggle = !state.toggle;
     },
   },

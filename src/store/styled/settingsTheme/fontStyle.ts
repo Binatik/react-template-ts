@@ -1,15 +1,6 @@
-import { breakpoints } from "./breakpoints";
+import { breakpoints } from './breakpoints';
 
-interface IFontStyle {
-  routers: string;
-  links: string;
-  buttons: string;
-  titles: string;
-  subTitles: string;
-  paragraphs: string;
-}
-
-export const fontStyle: IFontStyle = {
+export const fontStyle = {
   routers: `
     font-size: 1.5rem;
 
