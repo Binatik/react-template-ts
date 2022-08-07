@@ -1,9 +1,7 @@
-import { DefaultTheme } from 'styled-components';
-
 import { breakpoints } from './breakpoints';
 import { fontStyle } from './fontStyle';
 
-export const theme: DefaultTheme = {
+export const theme = {
   colors: {
     primary: '#fff',
     secondary: '#20212a',

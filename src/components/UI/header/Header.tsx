@@ -1,31 +1,44 @@
-import React, { FC } from 'react';
+import React, { FC, useRef, useEffect } from 'react';
 
-import { StyledContainer, StyledFlexRow } from '@src/styles/others';
-import { StyledRouterLinkSecondary } from '@src/styles/routers';
+import { StyledContainer } from '@src/styles/others';
+import { StyledFlexRow, StyledFlexListRow } from '@src/styles/grid';
+import { StyledRouterLinkPrimary } from '@src/styles/routers';
 import { StyledButtonSecondary } from '@src/styles/buttons';
 
-import { StyledHeader, StyledNavigation } from './styles';
+import { StyledHeader, StyledItem, StyledNavigation } from './styles';
 
-const Header: FC = () => {
+import { IHeader } from './types';
+
+const Header: FC<IHeader> = ({ setHeightHeader }) => {
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const { current: selectorHeader } = headerRef;
+    setHeightHeader(selectorHeader.getBoundingClientRect().bottom);
+  }, []);
+
   const text = 'Информация в разработке';
   return (
     <>
-      <StyledHeader>
+      <StyledHeader ref={headerRef}>
         <StyledContainer>
-          <StyledFlexRow isCenter={false}>
+          <StyledFlexRow content="space-between">
+            <StyledButtonSecondary
+              style={{ marginRight: '30px' }}
+              type="button"
+              onClick={() => alert(text)}>
+              Информация
+            </StyledButtonSecondary>
             <StyledNavigation>
-              <ul>
-                <li>
-                  <StyledRouterLinkSecondary style={{ marginRight: '10px' }} to="/">
-                    Главная
-                  </StyledRouterLinkSecondary>
-                </li>
-                <li>
-                  <StyledRouterLinkSecondary to="started">Дополнительная</StyledRouterLinkSecondary>
-                </li>
-              </ul>
+              <StyledFlexListRow style={{ textTransform: 'uppercase' }} content="flex-start">
+                <StyledItem>
+                  <StyledRouterLinkPrimary to="/">Главная</StyledRouterLinkPrimary>
+                </StyledItem>
+                <StyledItem>
+                  <StyledRouterLinkPrimary to="started">Дополнительная</StyledRouterLinkPrimary>
+                </StyledItem>
+              </StyledFlexListRow>
             </StyledNavigation>
-            <StyledButtonSecondary onClick={() => alert(text)}>Информация</StyledButtonSecondary>
           </StyledFlexRow>
         </StyledContainer>
       </StyledHeader>

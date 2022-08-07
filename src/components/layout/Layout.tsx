@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -6,14 +6,22 @@ import { useAppSelector } from '@src/hooks/useAppSelector';
 
 import { Header } from '../UI/header';
 
+interface IStyledMainProps {
+  height: number;
+}
+
 const Layout: FC = () => {
+  const [heightHeader, setHeightHeader] = useState<number>(0);
+
+  console.log(heightHeader);
+
   const { toggle } = useAppSelector(state => state.burger);
 
   return (
     <>
       <Wrapper>
-        <Header />
-        <Main>
+        <Header setHeightHeader={setHeightHeader} />
+        <Main height={heightHeader}>
           <Outlet />
         </Main>
       </Wrapper>
@@ -32,7 +40,9 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-const Main = styled.main`
-  padding-top: 10px;
+const Main = styled.main<IStyledMainProps>`
+  min-height: 1000px;
+  padding-top: ${props => props.height + 10}px;
+  background-color: ${props => props.theme.colors.surface};
   flex: 1 1;
 `;

@@ -2,10 +2,10 @@ import { breakpoints } from './breakpoints';
 
 export const fontStyle = {
   routers: `
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 
     @media (max-width: ${breakpoints.medium}px) {
-      font-size: 1.9rem;
+      font-size: 1.7rem;
     },
   `,
 
