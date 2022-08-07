@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
 
-import burger from './slice/burger';
+import burger from './slice/burger/burger';
 
 const store = configureStore({
   reducer: {

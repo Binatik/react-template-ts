@@ -6,8 +6,8 @@ import { fontStyle } from './fontStyle';
 export const theme: DefaultTheme = {
   colors: {
     primary: '#fff',
-    secondary: '#90a4b4',
-    surface: '#aa8270',
+    secondary: '#20212a',
+    surface: '#fe900d',
 
     other: {
       primary: '#374d5e',

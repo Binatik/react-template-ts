@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const Button = styled.button`
+const StyledButton = styled.button`
   cursor: pointer;
   display: block;
   padding: 10px 20px;
@@ -13,10 +13,10 @@ const Button = styled.button`
   ${props => props.theme.fontStyle.buttons};
 `;
 
-export const SecondaryButton = styled(Button)`
-  color: ${props => props.theme.colors.secondary};
+export const StyledButtonSecondary = styled(StyledButton)`
+  color: ${props => props.theme.colors.primary};
 
   &:hover {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.surface};
   }
 `;

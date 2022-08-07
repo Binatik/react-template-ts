@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 
-import { Container } from '@src/store/styled/components/other';
+import { StyledContainer } from '@src/styles/others';
 
 interface IErrorPage {
   code: number;
@@ -17,9 +17,9 @@ const ErrorPage: FC<IErrorPage> = ({ code }) => {
 
   return (
     <>
-      <Container>
+      <StyledContainer>
         <h2>{information}</h2>
-      </Container>
+      </StyledContainer>
     </>
   );
 };

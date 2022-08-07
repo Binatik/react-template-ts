@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit'; //Для типизации action
 
-interface IBurger {
-  toggle: boolean;
-}
+import { IBurger } from './types';
 
 const initialState: IBurger = {
   toggle: false,

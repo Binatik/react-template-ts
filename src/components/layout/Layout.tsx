@@ -4,11 +4,15 @@ import styled from 'styled-components';
 
 import { useAppSelector } from '@src/hooks/useAppSelector';
 
+import { Header } from '../UI/header';
+
 const Layout: FC = () => {
   const { toggle } = useAppSelector(state => state.burger);
+
   return (
     <>
       <Wrapper>
+        <Header />
         <Main>
           <Outlet />
         </Main>
@@ -24,11 +28,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  background-color: ${props => props.theme.colors.other.primary};
+  background-color: ${props => props.theme.colors.secondary};
   overflow: hidden;
 `;
 
 const Main = styled.main`
-  padding-top: 30px;
+  padding-top: 10px;
   flex: 1 1;
 `;

@@ -1,15 +1,15 @@
 import React, { FC } from 'react';
 
-import { SecondaryParagraph } from '@src/store/styled/components/texts';
-import { Container } from '@src/store/styled/components/other';
+import { StyledParagraphSecondary } from '@src/styles/texts';
+import { StyledContainer } from '@src/styles/others';
 
 const Home: FC = () => {
   return (
     <>
-      <Container>
-        <SecondaryParagraph>Главная страница</SecondaryParagraph>
-        <SecondaryParagraph>Home page</SecondaryParagraph>
-      </Container>
+      <StyledContainer>
+        <StyledParagraphSecondary>Главная страница</StyledParagraphSecondary>
+        <StyledParagraphSecondary>Home page</StyledParagraphSecondary>
+      </StyledContainer>
     </>
   );
 };

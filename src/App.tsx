@@ -1,12 +1,12 @@
-import React, { FC } from "react"
-import { Routes, Route, Navigate } from "react-router-dom";
+import React, { FC } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-import { Layout } from "./components/layout/Layout";
+import { Layout } from './components/layout/Layout';
 
-import { Home } from "./pages/Home";
-import { ErrorPage } from "@pages/ErrorPage";
+import { Home } from './pages/Home';
+import { ErrorPage } from '@pages/ErrorPage';
 
-import "./style.css";
+import './style.css';
 
 const App: FC = () => {
   return (
