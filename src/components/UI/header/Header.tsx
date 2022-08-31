@@ -17,7 +17,7 @@ const Header: FC<IHeader> = ({ setHeightHeader }) => {
     setHeightHeader(selectorHeader.getBoundingClientRect().bottom);
   }, []);
 
-  const text = 'Информация в разработке';
+  const text = 'Информация еще в разработке';
   return (
     <>
       <StyledHeader ref={headerRef}>
